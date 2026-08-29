@@ -1,4 +1,4 @@
-@'
+
 {
   "name": "cropwise-production",
   "private": true,
@@ -14,4 +14,3 @@
     "node": "22.x"
   }
 }
-'@ | Set-Content package.json
