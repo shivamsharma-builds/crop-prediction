@@ -34,7 +34,7 @@ const currentDir = path.dirname(currentFile);
 const frontendDist = path.resolve(currentDir, "../../frontend/dist");
 
 app.use(express.static(frontendDist, { index: false }));
-app.get("/*", (_req, res, next) => {
+app.get("*", (_req, res, next) => {
   if (_req.path.startsWith("/api/")) return next();
   return res.sendFile(path.join(frontendDist, "index.html"), (error) => {
     if (error) next(error);
