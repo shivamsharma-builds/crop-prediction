@@ -1,4 +1,3 @@
-
 {
   "name": "cropwise-production",
   "private": true,
@@ -8,7 +7,8 @@
     "build:backend": "npm run build --prefix backend",
     "build": "npm run install:all && npm run build:frontend && npm run build:backend",
     "start": "npm start --prefix backend",
-    "seed:admin": "npm run seed:admin --prefix backend"
+    "seed:admin": "npm run seed:admin --prefix backend",
+    "dev": "npx concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\""
   },
   "engines": {
     "node": "22.x"
