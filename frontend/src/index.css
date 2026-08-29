@@ -381,3 +381,86 @@ table {
     min-height: 46px;
   }
 }
+
+
+/* Generated prediction/advice readability */
+.generated-response,
+.prediction-response,
+.ai-response,
+.cultivation-advice {
+  font-size: 15px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.generated-response p,
+.prediction-response p,
+.ai-response p,
+.cultivation-advice p {
+  margin-block: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .generated-response,
+  .prediction-response,
+  .ai-response,
+  .cultivation-advice {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .generated-response li,
+  .prediction-response li,
+  .ai-response li,
+  .cultivation-advice li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* Desktop-only cleanup for any legacy visual box beside the soil section.
+   Mobile layout remains unchanged. */
+@media (min-width: 1024px) {
+  .soil-side-image,
+  .soil-visual-box,
+  .crop-visual {
+    display: none !important;
+  }
+}
+
+
+/* Text box / generated response final fix */
+.text-box,
+.textarea-field,
+.generated-response,
+.prediction-response,
+.ai-response,
+.cultivation-advice {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.text-box {
+  min-height: 110px;
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.65;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  .text-box,
+  .generated-response,
+  .prediction-response,
+  .ai-response,
+  .cultivation-advice {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
