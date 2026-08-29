@@ -1,0 +1,57 @@
+services:
+  - type: web
+    name: cropwise
+    runtime: node
+    plan: free
+    branch: render-deploy
+
+    buildCommand: npm run build
+    startCommand: npm start
+
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: VITE_API_URL
+        value: /api
+
+      - key: MONGODB_URI
+        sync: false
+
+      - key: JWT_SECRET
+        sync: false
+
+      - key: JWT_EXPIRES_IN
+        value: 7d
+
+      - key: CONFIG_ENCRYPTION_KEY
+        sync: false
+
+      - key: OPENROUTER_API_KEY
+        sync: false
+
+      - key: OPENROUTER_MODEL
+        value: openrouter/free
+
+      - key: OPENROUTER_SITE_URL
+        sync: false
+
+      - key: OPENROUTER_APP_NAME
+        value: CropWise
+
+      - key: ADMIN_EMAIL
+        sync: false
+
+      - key: ADMIN_PASSWORD
+        sync: false
+
+      - key: ADMIN_NAME
+        value: CropWise Admin
+
+      - key: COOKIE_SECURE
+        value: "true"
+
+      - key: FRONTEND_URL
+        sync: false

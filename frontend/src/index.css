@@ -1,0 +1,383 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #f5f7fb;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img,
+  svg,
+  iframe {
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  textarea {
+    min-width: 0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+@layer components {
+  .section-card {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .field,
+  .textarea-field {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    color: #172033;
+    outline: none;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .field {
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .textarea-field {
+    min-height: 96px;
+    padding: 9px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .field:focus,
+  .textarea-field:focus {
+    border-color: #22a447;
+    box-shadow: 0 0 0 3px rgba(34, 164, 71, 0.12);
+  }
+
+  .label {
+    display: block;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .micro {
+    color: #6b7280;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .range-input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+    accent-color: #22a447;
+    cursor: pointer;
+  }
+}
+
+/* Prevent long emails, locations, and AI-generated text from forcing
+   horizontal scrolling on narrow devices. */
+.breakable-content {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* Readability and touch-target defaults */
+@layer components {
+  button {
+    min-height: 42px;
+  }
+
+  .btn,
+  button:not([aria-hidden="true"]) {
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+  }
+
+  h3 {
+    font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  }
+}
+
+/* Responsive helpers used by the application shell. */
+.app-shell,
+.portal-page,
+.admin-page,
+.auth-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-container,
+.portal-content,
+.admin-content,
+.header-inner {
+  width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.portal-content,
+.admin-content {
+  padding-inline: clamp(12px, 2.5vw, 48px);
+  padding-top: clamp(16px, 2vw, 28px);
+  padding-bottom: clamp(32px, 4vw, 56px);
+}
+
+.location-layout,
+.portal-grid,
+.form-grid {
+  width: 100%;
+  min-width: 0;
+}
+
+.map-container {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+@media (max-width: 639px) {
+  .portal-content,
+  .admin-content {
+    padding-inline: 12px;
+    padding-top: 14px;
+    padding-bottom: 28px;
+  }
+
+  .section-card {
+    border-radius: 8px;
+  }
+
+  .field {
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .textarea-field {
+    min-height: 104px;
+    font-size: 13px;
+  }
+
+  .map-container {
+    min-height: 260px;
+  }
+}
+
+@media (min-width: 640px) {
+  .portal-content,
+  .admin-content {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .portal-content,
+  .admin-content {
+    max-width: 1720px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .portal-content,
+  .admin-content {
+    max-width: 1900px;
+  }
+}
+
+
+/* Final UI scale: slightly larger controls and readable text */
+@media (min-width: 640px) {
+  .field,
+  .textarea-field {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 639px) {
+  button {
+    min-height: 44px;
+    padding-inline: 14px;
+  }
+
+  .field {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .textarea-field {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .micro {
+    font-size: 11px;
+  }
+}
+
+
+/* Final UI scale — larger sections, text and controls */
+@layer components {
+  .section-card {
+    border-radius: 12px;
+    padding: clamp(14px, 1.6vw, 24px);
+  }
+
+  .field {
+    min-height: 46px;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .textarea-field {
+    min-height: 112px;
+    padding: 11px 12px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .label {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .micro {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  button {
+    min-height: 46px;
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+
+  .range-input {
+    height: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .field {
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  .textarea-field {
+    font-size: 15px;
+  }
+
+  button {
+    min-height: 48px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 639px) {
+  .section-card {
+    padding: 14px;
+  }
+
+  .field,
+  .textarea-field {
+    font-size: 15px;
+  }
+
+  button {
+    min-height: 46px;
+    padding-inline: 14px;
+  }
+}
+
+
+/* Final responsive cleanup */
+.crop-visual {
+  display: none !important;
+}
+
+@media (max-width: 639px) {
+  .section-card {
+    padding: 14px;
+  }
+
+  button {
+    min-height: 46px;
+  }
+}
