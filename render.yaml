@@ -55,6 +55,3 @@ services:
 
       - key: FRONTEND_URL
         sync: false
-
-      - key: NPM_INSTALL_FLAGS
-        value: "--include=dev"
