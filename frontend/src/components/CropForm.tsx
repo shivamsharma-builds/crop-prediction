@@ -53,7 +53,7 @@ export function CropForm({
         setSiteError(error.message || "Unable to read your location.");
         setLocating(false);
       },
-      { enableHighAccuracy: true, timeout: 12000 },
+      { enableHighAccuracy: false, timeout: 60000, maximumAge: 300000 },
     );
   };
 
