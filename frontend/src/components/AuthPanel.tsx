@@ -1,3 +1,4 @@
+// auth panel
 import { FormEvent, useState } from "react";
 import { Leaf, Loader2, ArrowLeft } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
