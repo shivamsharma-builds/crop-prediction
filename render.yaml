@@ -57,4 +57,4 @@ services:
         sync: false
 
       - key: NPM_INSTALL_FLAGS
-        value: "--include=dev
+        value: "--include=dev"
